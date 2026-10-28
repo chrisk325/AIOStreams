@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.11.0](https://github.com/Viren070/AIOStreams/compare/android-v0.10.0...android-v0.11.0) (2026-10-28)
+
+
+### Features
+
+* **android:** answer the page's licences request ([4d394c2](https://github.com/Viren070/AIOStreams/commit/4d394c23d906ddf30d083d09bc14793639e9367e))
+
+
+### Bug Fixes
+
+* **android:** ignore picture-in-picture updates after the window closes ([b6e6314](https://github.com/Viren070/AIOStreams/commit/b6e63145f767c32eaab3f99b398e4e0dcf792cb5))
+* **android:** leave a stalled stream cache fetch instead of closing it ([79cdbf5](https://github.com/Viren070/AIOStreams/commit/79cdbf5044298ba716cfeafa77bcf8c602eed4e9)), closes [#1663](https://github.com/Viren070/AIOStreams/issues/1663)
+* **android:** render ASS subtitles ahead on their own thread ([c15dabd](https://github.com/Viren070/AIOStreams/commit/c15dabd340eb0a807f6fd5e71e9facf7f14a9bdc))
+* **android:** set mpv's hwdec only when the setting changes ([70cdc3c](https://github.com/Viren070/AIOStreams/commit/70cdc3cbf5a2803fb072a7ce5b48b55a487927f2))
+
+
+### Performance Improvements
+
+* **android:** load libass.so rather than libmpv for ExoPlayer's subtitles ([adf6d59](https://github.com/Viren070/AIOStreams/commit/adf6d59be110636cfbe6ddad81b516bf1e1a7ada))
+* **android:** update libmpv for libass's helper threads ([b0c3ca3](https://github.com/Viren070/AIOStreams/commit/b0c3ca3ff3b0b219e19872e7e710646d14e38b61))
+
 ## [0.10.0](https://github.com/Viren070/AIOStreams/compare/android-v0.9.0...android-v0.10.0) (2026-10-23)
 
 
