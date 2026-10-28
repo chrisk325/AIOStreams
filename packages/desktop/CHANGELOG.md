@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.21.0](https://github.com/Viren070/AIOStreams/compare/desktop-v0.20.0...desktop-v0.21.0) (2026-10-28)
+
+
+### Features
+
+* **desktop:** answer the page's licences request ([837bfd9](https://github.com/Viren070/AIOStreams/commit/837bfd9ccfc0492b97025074d41a24363b3ea10a))
+
+
+### Bug Fixes
+
+* **desktop:** pass FFmpeg's HTTP reader its reconnect options ([9f6e0f2](https://github.com/Viren070/AIOStreams/commit/9f6e0f2546c9cdd215703847a25945066e0e54f8))
+* **desktop:** tone map HDR with bt.2390 on Windows ([d208475](https://github.com/Viren070/AIOStreams/commit/d20847542584509f10dc474cd5c75f0fffa4415d))
+
+
+### Performance Improvements
+
+* **desktop:** build the Flatpak's libass from AIOStreams/libass ([deecaff](https://github.com/Viren070/AIOStreams/commit/deecaff21564caa4e80e4742ca1c5eef2f3e258b))
+
 ## [0.20.0](https://github.com/Viren070/AIOStreams/compare/desktop-v0.19.0...desktop-v0.20.0) (2026-10-23)
 
 
