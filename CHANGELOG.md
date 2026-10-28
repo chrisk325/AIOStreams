@@ -1,5 +1,54 @@
 # Changelog
 
+## [2.38.0](https://github.com/Viren070/AIOStreams/compare/v2.37.0...v2.38.0) (2026-10-28)
+
+
+### Features
+
+* **android:** answer the page's licences request ([4d394c2](https://github.com/Viren070/AIOStreams/commit/4d394c23d906ddf30d083d09bc14793639e9367e))
+* **core:** carry each source's rating from metas to Jellyfin items ([b7101bd](https://github.com/Viren070/AIOStreams/commit/b7101bdf36dd2aff44883e98d1a9a73ff202464f))
+* **desktop:** answer the page's licences request ([837bfd9](https://github.com/Viren070/AIOStreams/commit/837bfd9ccfc0492b97025074d41a24363b3ea10a))
+* **frontend:** allow dragging to order jellyfin users ([#1470](https://github.com/Viren070/AIOStreams/issues/1470)) ([3ae0650](https://github.com/Viren070/AIOStreams/commit/3ae0650c45cb1fe69191e37637860b13efe992b0))
+* **native:** render thumbnails 480 pixels wide ([25ed24b](https://github.com/Viren070/AIOStreams/commit/25ed24bb44a8119b44683e8569e01e5fbd6a6b26))
+* **web:** add a licences list to the About page ([c8e893b](https://github.com/Viren070/AIOStreams/commit/c8e893b5e85849cdcdbebf2c4a3eaa9f0d93d97e))
+* **web:** add shuffle and repeat to playlists ([5aa733f](https://github.com/Viren070/AIOStreams/commit/5aa733fdff4742c59b508347c8dcd5860fe19577))
+* **web:** drag the hero's titles with the mouse too ([9e23c42](https://github.com/Viren070/AIOStreams/commit/9e23c424aa936d6b51571f7e402ec2f6f40cdb5c))
+* **web:** ease subtitles to a new height rather than jump ([1c64779](https://github.com/Viren070/AIOStreams/commit/1c64779d1dbd1c72fdbd6a1c8261227a0df78013))
+* **web:** hide languages under half translated ([7e7d3ad](https://github.com/Viren070/AIOStreams/commit/7e7d3adfc0dc67feaa8b1a66a9a851e9aad01107))
+* **web:** let tab names hide on the bottom bar too ([489706d](https://github.com/Viren070/AIOStreams/commit/489706d40421efebf329e1605f118776aa9054d0))
+* **web:** move a player menu's page rows above its list ([0157db7](https://github.com/Viren070/AIOStreams/commit/0157db74c82cc8e6c90b983c531351b906daa135))
+* **web:** offer top tabs on desktops and tablets ([f392ab6](https://github.com/Viren070/AIOStreams/commit/f392ab67333b3f06fe6e574705c4e7d8027bce5e))
+* **web:** open a preview over the home card the pointer or focus rests on ([00e5b0f](https://github.com/Viren070/AIOStreams/commit/00e5b0fc3f1c8f36acb3d0e794fe660d6ac8e70f))
+* **web:** scrub with a TV remote through a row of pictures ([2862314](https://github.com/Viren070/AIOStreams/commit/2862314d811632853612e9b6d8d50c911334643e))
+* **web:** show a badge for each rating source ([8709594](https://github.com/Viren070/AIOStreams/commit/8709594e5cc81705b26a77d5e4c26182671a4d5f))
+* **web:** show what's playing over the picture once paused for a while ([606766c](https://github.com/Viren070/AIOStreams/commit/606766c5a98661b5bbabda2873ad8e9a546bf8dd))
+
+
+### Bug Fixes
+
+* **jellyfin:** read the socket token from auth headers too ([efaa2da](https://github.com/Viren070/AIOStreams/commit/efaa2daab291e89d8bc9f22f1954a13523b3db05))
+* **jellyfin:** upsert id mappings in key order, skipping fresh ones ([e597638](https://github.com/Viren070/AIOStreams/commit/e597638d04dee4e33dd6ab3fb169bae10290baca))
+* **media-info:** only relist a hidden row when its record changes ([611458d](https://github.com/Viren070/AIOStreams/commit/611458d203ed569254d73f19f184c3004dc04caf))
+* **media-info:** round probe durations to whole milliseconds ([738d09f](https://github.com/Viren070/AIOStreams/commit/738d09f3ec8768a7df7755e9c669637cd8e25be9))
+* **media-info:** upsert a batch in key order ([42913c6](https://github.com/Viren070/AIOStreams/commit/42913c6dbc1edad26cc1c18390505a9aa6654f4b))
+* **usenet:** reject articles whose yEnc part isn't their NZB segment number ([bda7e21](https://github.com/Viren070/AIOStreams/commit/bda7e21a53c05ab9f6afb2801dd755399dd5c2d7))
+* **watch-state:** round positions and durations before storing them ([a1c1ba6](https://github.com/Viren070/AIOStreams/commit/a1c1ba63377c7cafd983d80214d311686d45db3e))
+* **web:** drop chapter-named openings, recaps and previews over three minutes ([2fc0436](https://github.com/Viren070/AIOStreams/commit/2fc04364bf8faa60d4c745458f84aa67647a4789))
+* **web:** fit the bottom bar to its icons when tab names are hidden ([c1d28bb](https://github.com/Viren070/AIOStreams/commit/c1d28bb3d7ea03e5bd36a9732847bc5cfdfd9dc7))
+* **web:** let React listen for transition and animation ends ([8192eeb](https://github.com/Viren070/AIOStreams/commit/8192eebd1260ac4de2c16587b0d4c249edefcab7))
+* **web:** raise and lower subtitles a percent at a time ([364539f](https://github.com/Viren070/AIOStreams/commit/364539f0b3c05a1e868d11a1ccd58f930848cc3d))
+* **web:** size TV artwork from the screen and layout widths ([0a92cce](https://github.com/Viren070/AIOStreams/commit/0a92ccefe00fee1effc6cb20e62daa64b0681f4c))
+* **web:** snap the volume bar to full volume ([286b8f0](https://github.com/Viren070/AIOStreams/commit/286b8f0b59bc2301ec04cfd9463442cc2e95fd96))
+* **web:** start keys on the sync-by-ear panel's Heard button ([4596c92](https://github.com/Viren070/AIOStreams/commit/4596c9231e2fb10207ba59b6a740a1b00075e113))
+
+
+### Performance Improvements
+
+* **core:** index FULL_LANGUAGE_MAPPING by code and name ([0bb34e8](https://github.com/Viren070/AIOStreams/commit/0bb34e840f2f4e98757e8dc047d4b83f261bf1f4))
+* **core:** skip parseLockResult's reviver without a flattened error ([aa3ee39](https://github.com/Viren070/AIOStreams/commit/aa3ee398fa6e1622357cfbd192ab7e8420f0eb23))
+* **core:** skip re-parsing a SEL result that's just the input streams ([7d039dd](https://github.com/Viren070/AIOStreams/commit/7d039dd80b61335d9356ae5059286a40c7369845))
+* **web:** size artwork for the pixels the page is drawn at ([f0e9c7f](https://github.com/Viren070/AIOStreams/commit/f0e9c7fce4d4237106639deeb1b41cdf3a6238c9))
+
 ## [2.37.0](https://github.com/Viren070/AIOStreams/compare/v2.36.0...v2.37.0) (2026-10-23)
 
 
