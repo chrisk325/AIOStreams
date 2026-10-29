@@ -82,6 +82,21 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))
             signingConfig = signingConfigs.getByName("release").takeIf { it.storeFile != null }
         }
+        listOf(
+            "probeBase" to "AIOS Probe Base",
+            "probePip" to "AIOS Probe PiP",
+            "probeTv" to "AIOS Probe TV",
+            "probeMedia" to "AIOS Probe Media",
+            "probeAll" to "AIOS Probe All",
+        ).forEach { (probe, label) ->
+            create(probe) {
+                initWith(getByName("debug"))
+                applicationIdSuffix = ".${probe.lowercase()}"
+                resValue("string", "app_name", label)
+                signingConfig = signingConfigs.getByName("debug")
+                matchingFallbacks += listOf("debug")
+            }
+        }
     }
 
     buildFeatures {
