@@ -1,6 +1,8 @@
 package io.github.viren070.aiostreams
 
 import android.app.Activity
+import android.app.UiModeManager
+import android.content.res.Configuration
 import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
@@ -16,38 +18,55 @@ class FrameRateMatch(
 ) {
     var enabled = false
         set(value) {
+            if (field == value) return
             field = value
-            if (!value) match(null)
+            update()
         }
 
+    private val tv =
+        activity.getSystemService(UiModeManager::class.java)?.currentModeType == Configuration.UI_MODE_TYPE_TELEVISION
     private val main = Handler(Looper.getMainLooper())
-    private var matched = 0.0
+
+    private var playing: Double? = null
+    private var chosen: Int? = null
     private var original: Int? = null
     private var waiting: Runnable? = null
 
     fun match(frameRate: Double?) {
-        if (frameRate == null || !enabled) return restore()
-        if (abs(frameRate - matched) < 0.01) return
-        matched = frameRate
+        playing = frameRate
+        update()
+    }
+
+    private fun update() {
+        val fps = playing ?: return restore()
         val display = activity.window.decorView.display ?: return
         val active = display.mode
-        val best = choose(display.supportedModes.filter { it.sameSize(active) }, frameRate.toFloat()) ?: return
-        if (best.modeId == active.modeId) return
+        val modes = display.supportedModes.filter { it.sameSize(active) }
+        val best = when {
+            !tv -> modes.maxByOrNull { it.refreshRate }
+            enabled -> choose(modes, fps.toFloat())
+            else -> null
+        } ?: return restore()
+        if (best.modeId == chosen) return
         if (original == null) original = activity.window.attributes.preferredDisplayModeId
+        chosen = best.modeId
         prefer(best.modeId)
+        if (!tv || best.modeId == active.modeId) return
         val held = hold()
         wait(display, best) { if (held) resume() }
     }
 
     private fun restore() {
-        matched = 0.0
         cancelWait()
-        prefer(original ?: return)
+        chosen = null
+        val back = original ?: return
         original = null
+        prefer(back)
     }
 
     private fun prefer(modeId: Int) {
         val params = activity.window.attributes
+        if (params.preferredDisplayModeId == modeId) return
         params.preferredDisplayModeId = modeId
         activity.window.attributes = params
     }
