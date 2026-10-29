@@ -238,6 +238,7 @@ class ExoEngine(private val context: Context) :
             .setHandleAudioBecomingNoisy(false)
             .setLoadControl(BufferControl(cache))
             .build()
+        if (!Util.isTv(context)) player.setVideoChangeFrameRateStrategy(C.VIDEO_CHANGE_FRAME_RATE_STRATEGY_OFF)
         player.addListener(this)
         player.addAnalyticsListener(this)
         player.setVideoFrameMetadataListener(this)
